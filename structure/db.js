@@ -3,6 +3,6 @@ const mongoose = require("mongoose");
 const winston = require("winston");
 
 module.exports = () => {
-    mongoose.connect("mongodb://localhost/vidly")
+    mongoose.connect(process.env.MONGO_URI)
         .then(()=> winston.info("connecting to mongodb..."))
 }
