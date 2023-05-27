@@ -18,7 +18,6 @@ winston.createLogger({
 
 winston.add(new winston.transports.File({ filename: 'logfile.log', level: 'error'}));
 winston.add(new winston.transports.MongoDB({ db: 'mongodb://localhost/vidly', level: 'error' }));
-winston.rejections.handle(new winston.transports.File({ filename: 'rejections.log'}))
 
 const p = Promise.reject(new Error('Something failed miserably!!'))
 p.then(()=> console.log("DONE"))
